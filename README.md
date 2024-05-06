@@ -60,8 +60,8 @@ With basic notations defined as above, the simplest case of uplift modeling invo
 Example outcome:
 for a customer with features $X_i$ = {age 30 income 50,000}, let's say:
 <br>
-M1 predicts $E[Y_i(1)|X_i]=\$250$ <br>
-M2 predicts $E[Y_i(0)|X_i]=\$200$ <br>
+M1 predicts $E[Y_i(1)|X_i]$ = \$250 <br>
+M2 predicts $E[Y_i(0)|X_i]$ = \$200 <br>
 Then the Uplift would be \$250 - \$200 = \$50
 
 Interpretation:
