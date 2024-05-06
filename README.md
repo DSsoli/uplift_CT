@@ -9,7 +9,7 @@ These kernels serve to provide sample demonstrations on uplift modeling using ar
 with $i$ as index for $N$ individuals, the causal effect $\tau_i$ is denoted as:
 
 <p align="center">
-  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/1.png?raw=true" width="250"/>
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/1.png?raw=true" width="200"/>
 </p>
 
 where, <br>
@@ -28,10 +28,10 @@ if $\tau = 0$: no effect
 Here, the Conditional Average Treatment Effect (CATE) is denoted as:
 
 <p align="center">
-  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/2.png?raw=true" width="250"/>
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/2.png?raw=true" width="400"/>
 </p>
 
-where $ CATE (\tau(X_i)) $ is the conditional average treatment effect for a subgroup of individuals characterized by the features $X_i$ where $X_i$ may include variables like age, gender, etc.
+where $CATE (\tau(X_i))$ is the conditional average treatment effect for a subgroup of individuals characterized by the features $X_i$ where $X_i$ may include variables like age, gender, etc.
 <br>
 $E[Y_i(1) | X_i]$ is the expected outcome for individuals in the subgroup $X_i$ when they receive the treatment.
 <br>
@@ -42,7 +42,7 @@ Thus if $CATE > 0$: on average, the treatment has a positive effect on the subgr
 As it is impossible to observe $Y_i(1)$ and $Y_i(0)$ at the same time, the *observed* $Y_i$ can be defined using $W_i$ as binary variable having either 1 or 0 depending on if the individual $i$ receives the active (1) vs. control (0) treatment, as follows.
 
 <p align="center">
-  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/3.png?raw=true" width="250"/>
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/3.png?raw=true" width="400"/>
 </p>
 
 ### Two-Model Approach
@@ -60,8 +60,8 @@ With basic notations defined as above, the simplest case of uplift modeling invo
 Example outcome:
 for a customer with features $X_i$ = {age 30 income 50,000}, let's say:
 <br>
-M1 predicts $ E[Y_i(1)|X_i]=\$250 $ <br>
-M2 predicts $ E[Y_i(0)|X_i]=\$200 $ <br>
+M1 predicts $E[Y_i(1)|X_i]=\$250$ <br>
+M2 predicts $E[Y_i(0)|X_i]=\$200$ <br>
 Then the Uplift would be \$250 - \$200 = \$50
 
 Interpretation:
@@ -82,7 +82,7 @@ For a new individual with features $X_i$, you would use both M1  and M2  to pred
 Cass Transformation model, on the other hand, utilizes a newly created target variable, defined as:
 
 <p align="center">
-  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/4.png?raw=true" width="250"/>
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/4.png?raw=true" width="400"/>
 </p>
 
 where, <br>
@@ -98,7 +98,7 @@ Note that this is why the number of treated customers should be equal to the num
 having an actual 1:1 ratio of treatment to control samples would be one way to satisfy this assumption, especially if you're randomly assigning individuals to each group. If the groups are perfectly balanced, then the probability of any given feature profile $X_i$ being in either group would NATURALLY be 1/2.)
 
 <p align="center">
-  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/5.png?raw=true" width="250"/>
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/5.png?raw=true" width="200"/>
 </p>
 
 Then $\tau(X_i)$ can be denoted as:
