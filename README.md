@@ -32,7 +32,6 @@ Here, the Conditional Average Treatment Effect (CATE) is denoted as:
 where $CATE (\tau(X_i))$ is the conditional average treatment effect for a subgroup of individuals characterized by the features $X_i$ where $X_i$ may include variables like age, gender, etc.
 <br>
 - $E[Y_i(1) | X_i]$ is the expected outcome for individuals in the subgroup $X_i$ when they receive the treatment.
-<br>
 - $E[Y_i(0) | X_i]$ is the expected outcome for individuals in the subgroup $X_i$ when they do not receive the treatment.
 <br>
 
