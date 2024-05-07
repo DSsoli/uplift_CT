@@ -171,5 +171,5 @@ Note that, <br>
 2. AUUC is defiend as the area under the uplift curve, and this is also a single integer/float (the size of the area).
 3. In balanced cases, both curves are essentially similar.
     - $g(t)$, i.e. Qini can be transformed into $f(t)$ via scaling. So the only difference between the two is how they are scaled (normalized)
-5. Generally speaking, the larger the Qini or AUUC, the better the model is at identifying who will respond positively to the treatment
+5. Generally speaking, the larger the Qini or the AUUC, the better the model is at identifying who will respond positively to the treatment
 6. For imbalanced cases, Qini curve is considered to be more robust.
