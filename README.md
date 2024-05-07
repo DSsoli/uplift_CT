@@ -1,4 +1,4 @@
-# Demonstrations on Uplift Modeling with Class Transformation Model and Oversampling
+# Demonstration Kernel on Uplift Modeling with Class Transformation Model and Oversampling
 
 These kernels serve to provide sample demonstrations on uplift modeling using artificial datasets, particularly utilizing Class Transformation models and oversampling techniques.
 
@@ -9,22 +9,20 @@ These kernels serve to provide sample demonstrations on uplift modeling using ar
 with $i$ as index for $N$ individuals, the causal effect $\tau_i$ is denoted as:
 
 <p align="center">
-  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/1.png?raw=true" width="200"/>
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/1.png?raw=true" width="180"/>
 </p>
-
 where, <br>
-$Y_i(1)$: outcome for person $i$ when he/she receives the active treatment
+- $Y_i(1)$: outcome for person $i$ when he/she receives the active treatment
 <br>
-$Y_i(0)$: outcome for person $i$ when he/she receives the control treatment
-$\tau_i$: causal effect of the treatment for that individual
+- $Y_i(0)$: outcome for person $i$ when he/she receives the control treatment
+- $\tau_i$: causal effect of the treatment for that individual
 <br>
-and thus, <br>
-if $\tau > 0$: treatment has positive effect on the individual $i$ and,
+Thus, <br>
+- if $\tau > 0$: treatment has positive effect on the individual $i$ and,
+- if $\tau < 0$: negative effect
+- if $\tau = 0$: no effect
 <br>
-if $\tau < 0$: negative effect
 <br>
-if $\tau = 0$: no effect
-
 Here, the Conditional Average Treatment Effect (CATE) is denoted as:
 
 <p align="center">
