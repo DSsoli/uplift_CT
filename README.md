@@ -140,21 +140,21 @@ The procedure is as follows.
 3. Top $t$ Observations: You take only the first $t$ individuals from this sorted list. These are the people for whom your model predicts the largest positive effect from the treatment.
 4. Calculating $f(t)$: Finally, you use only these top $t$ observations to calculate the function $f(t)$ as defined in the equation.
 
-Essentially, we are calculating $f(t)$ by using the subgroup of individuals who respond most positively to the campaign, and thus making a curve of $f(t)$.
+Essentially, we are calculating $f(t)$ by using the subgroup of individuals who respond most positively to the campaign, and thus making the curve of $f(t)$.
 
-An example curve may look like this:
+An example Uplift Curve may look like this:
 
 <p align="center">
   <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/uplift_curve.png?raw=true" width="550"/>
 </p>
 
 - The random line (orage): A positive slope connotes that in general treating the whole population has a positive effect.
-- The points along the AUC line (blue): Connotes predicted uplift gain
-- Shape of the curve: If bell-shaped, implies both powerful positive and negative effects in the dataset. We can say that no such effects exist if the curve is closer to the random line.
+- The points along the AUC line (blue): Connotes the predicted uplift gain
+- Shape of the curve: If bell-shaped, implies the strong existence of both positive and negative effects in the dataset. We can say that no such effects exist if the curve is closer to the random line.
 
 > Qini Curve
 
-In addition to the uplift curve, Qini curve (or, Qini coefficient, which refers to the area under the Qini curve) can be used as a useful evaluation metric:
+In addition to the uplift curve, Qini curve (or, Qini coefficient, which refers to the area under the Qini curve) can be used as a complementary evaluation metric, with $g(t)$ defined as:
 
 <p align="center">
   <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/9.png?raw=true" width="220"/>
@@ -167,9 +167,9 @@ An example Qini curve may look like:
 
 Note that, <br>
 
-1. Qini coefficient is defined as the area under the Qini curve, and thus this is a single integer/float (i.e. of the area size)
-2. AUUC is defiend as area under the uplift curve, and this is also defined as a single integer/float (the size of the area)
-3. In balanced cases, both curves are basically similar.
-4. $g(t)$, i.e. Qini can be transformed into $f(t)$ via scaling. So the only difference between the two is how they are scaled (normalized)
+1. Qini coefficient is defined as the area under the Qini curve, and thus this is a single integer/float (i.e. of the area size).
+2. AUUC is defiend as the area under the uplift curve, and this is also a single integer/float (the size of the area).
+3. In balanced cases, both curves are essentially similar.
+    - $g(t)$, i.e. Qini can be transformed into $f(t)$ via scaling. So the only difference between the two is how they are scaled (normalized)
 5. Generally speaking, the larger the Qini or AUUC, the better the model is at identifying who will respond positively to the treatment
 6. For imbalanced cases, Qini curve is considered to be more robust.
