@@ -1,6 +1,6 @@
 # Demonstration Kernel on Uplift Modeling with Class Transformation Model and Oversampling
 
-These kernels serve to provide sample demonstrations on uplift modeling using artificial datasets, particularly utilizing Class Transformation models and oversampling techniques.
+These kernels serve to provide sample demonstrations on uplift modeling using artificial marketing datasets, particularly utilizing Class Transformation models and oversampling techniques.
 
 ## Brief Introduction to Uplift Modeling
 
