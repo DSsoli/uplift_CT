@@ -56,10 +56,10 @@ With basic notations defined as above, the simplest case of uplift modeling invo
 
 
 Example outcome:
-for a customer with features $X_i$ = {age 30 income 50,000}, let's say:
+for a customer with features $X_i$ = {age 30, income 50,000}, let's say:
 <br>
-- M1 predicts $E[Y_i(1)|X_i]$ = \$250 <br>
-- M2 predicts $E[Y_i(0)|X_i]$ = \$200 <br>
+- $M1$ predicts $E[Y_i(1)|X_i]$ = \$250 <br>
+- $M2$ predicts $E[Y_i(0)|X_i]$ = \$200 <br>
 
 Then the Uplift would be \$250 - \$200 = \$50 <br>
 Interpretation:
@@ -113,15 +113,15 @@ Then $\tau(X_i)$ can be denoted as:
 where: <br>
 - $P(Z_i=1|X_i)$: conditional probability of $Z_i$ being 1 given the features $X_i$ <br>
 - $2P(Z_i=1|X_i)-1$: scaling to make $\tau(X_i)$ range from -1 to 1 <br>
-- $\tau(X_i)$ depicts CATE, ie the effect of the treatment such as marketing promotion. <br>
-- And if CATE is close to 1, the effect is positive (treatment has positive effect on the purchse decision), <br>
-    - if close to -1, its negative (treatment has negtaive effect on the individual's purchase decision. ie, if they recieve treatment, they wont purchase), <br>
-    - if close to 0, no effect on purchase decision regardless of the campaign.
+- $\tau(X_i)$ depicts CATE, i.e. the effect of the treatment such as marketing promotion. <br>
+    - Thus if $CATE$ is close to 1, the effect is positive (treatment has positive effect on the purchase decision) <br>
+    - If close to -1, the effect is negative (treatment has negative effect on the individuals' purchase decision; i.e., if they recieve the treatment, it's likely that they will not purchase) <br>
+    - if close to 0, no effect on the purchase decision regardless of the campaign.
 
 ### Evaluation
 > Uplift Curve
 
-As for the evaluations of the models performance comparison, uplift curve is defined as:
+As for the evaluations of the models performance comparison, the Uplift Curve is defined as:
 
 <p align="center">
   <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/8.png?raw=true" width="300"/>
@@ -131,11 +131,11 @@ where, <br>
 1. $Y_t^T$ and $Y_t^C$ refer to the outcomes (visible outcome), i.e. the actual observed purchase count, aligned from the largest CATE to the lowest CATE (t=1 being largest and so on).
 2. $N_t$ refers to the number of observations.
 3. The action of subtracting (-) as $Y^T$ - $Y^C$ is to subtract the response (purchase amount) regardless of the treatment effect from the response generated from the treatment.
-This subtraction gives you a measure of the "net effect" of the treatment on the observed outcomes.
+This substraction gives you a measure of the "net effect" of the treatment on the observed outcomes.
 4. The action of using $N^T$ and $N^C$ (multiplying or dividing them) is for balancing (i.e. to cope with potential data imbalance).
 
 The procedure is as follows.
-1. get uplift score (i.e. $CATE$, or, $\tau(X)$) from the model.
+1. get uplift score (i.e. $CATE$, or, $\tau(X)$ ) from the model.
 2. sorting: You then sort all individuals in your dataset by this predicted uplift score, from highest to lowest.
 3. Top $t$ Observations: You take only the first $t$ individuals from this sorted list. These are the people for whom your model predicts the largest positive effect from the treatment.
 4. Calculating $f(t)$: Finally, you use only these top $t$ observations to calculate the function $f(t)$ as defined in the equation.
