@@ -142,7 +142,7 @@ Essentially, we are calculating $f(t)$ by using the subgroup of individuals who 
 An example curve may look like this:
 
 <p align="center">
-  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/uplift_curve.png?raw=true" width="300"/>
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/uplift_curve.png?raw=true" width="550"/>
 </p>
 
 - The random line (orage): A positive slope connotes that in general treating the whole population has a positive effect.
@@ -154,12 +154,12 @@ An example curve may look like this:
 In addition to the uplift curve, Qini curve (or, Qini coefficient, which refers to the area under the Qini curve) can be used as a useful evaluation metric:
 
 <p align="center">
-  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/9.png?raw=true" width="300"/>
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/9.png?raw=true" width="220"/>
 </p>
 
 An example Qini curve may look like:
 <p align="center">
-  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/qini_curve.png?raw=true" width="300"/>
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/qini_curve.png?raw=true" width="550"/>
 </p>
 
 Note that, <br>
