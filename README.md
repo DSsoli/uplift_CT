@@ -115,3 +115,58 @@ And if CATE is close to 1, the effect is positive (treatment has positive effect
 if close to -1, its negative (treatment has negtaive effect on the individual's purchase decision. ie, if they recieve treatment, they wont purchase), <br>
 if close to 0, no effect on purchase decision regardless of the campaign.
 
+### Evaluation
+> Uplift Curve
+
+As for the evaluations of the models performance comparison, uplift curve is defined as:
+
+<p align="center">
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/8.png?raw=true" width="300"/>
+</p>
+
+where, <br>
+1. $Y_t^T$ and $Y_t^C$ refer to the outcomes (visible outcome), i.e. the actual observed purchase count, aligned from the largest CATE to the lowest CATE (t=1 being largest and so on).
+2. $N_t$ refers to the number of observations.
+3. The action of subtracting (-) as $Y^T$ - $Y^C$ is to subtract the response (purchase amount) regardless of the treatment effect from the response generated from the treatment.
+This subtraction gives you a measure of the "net effect" of the treatment on the observed outcomes.
+4. The action of using $N^T$ and $N^C$ (multiplying or dividing them) is for balancing (i.e. to cope with potential data imbalance).
+
+The procedure is as follows.
+1. get uplift score (i.e. $CATE$, or, $\tau(X)$) from the model.
+2. sorting: You then sort all individuals in your dataset by this predicted uplift score, from highest to lowest.
+3. Top $t$ Observations: You take only the first $t$ individuals from this sorted list. These are the people for whom your model predicts the largest positive effect from the treatment.
+4. Calculating $f(t)$: Finally, you use only these top $t$ observations to calculate the function $f(t)$ as defined in the equation.
+
+Essentially, we are calculating $f(t)$ by using the subgroup of individuals who respond most positively to the campaign, and thus making a curve of $f(t)$.
+
+An example curve may look like this:
+
+<p align="center">
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/uplift_curve.png?raw=true" width="300"/>
+</p>
+
+- The random line (orage): A positive slope connotes that in general treating the whole population has a positive effect.
+- The points along the AUC line (blue): Connotes predicted uplift gain
+- Shape of the curve: If bell-shaped, implies both powerful positive and negative effects in the dataset. We can say that no such effects exist if the curve is closer to the random line.
+
+> Qini Curve
+
+In addition to the uplift curve, Qini curve (or, Qini coefficient, which refers to the area under the Qini curve) can be used as a useful evaluation metric:
+
+<p align="center">
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/9.png?raw=true" width="300"/>
+</p>
+
+An example Qini curve may look like:
+<p align="center">
+  <img src="https://github.com/DSsoli/uplift_CT/blob/main/imgs/qini_curve.png?raw=true" width="300"/>
+</p>
+
+Note that, <br>
+
+1. Qini coefficient is defined as the area under the Qini curve, and thus this is a single integer/float (i.e. of the area size)
+2. AUUC is defiend as area under the uplift curve, and this is also defined as a single integer/float (the size of the area)
+3. In balanced cases, both curves are basically similar.
+4. $g(t)$, i.e. Qini can be transformed into $f(t)$ via scaling. So the only difference between the two is how they are scaled (normalized)
+5. Generally speaking, the larger the Qini or AUUC, the better the model is at identifying who will respond positively to the treatment
+6. for imbalanced cases, Qini curve is considered to be more robust.
