@@ -166,4 +166,4 @@ Note that, <br>
 3. In balanced cases, both curves are basically similar.
 4. $g(t)$, i.e. Qini can be transformed into $f(t)$ via scaling. So the only difference between the two is how they are scaled (normalized)
 5. Generally speaking, the larger the Qini or AUUC, the better the model is at identifying who will respond positively to the treatment
-6. for imbalanced cases, Qini curve is considered to be more robust.
+6. For imbalanced cases, Qini curve is considered to be more robust.
